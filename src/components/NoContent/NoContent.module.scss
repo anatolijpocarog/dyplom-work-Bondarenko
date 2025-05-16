@@ -1,0 +1,28 @@
+.noContent {
+	position: relative;
+	height: 10vh;
+	width: 100%;
+	font-size: 25px;
+	font-weight: 800;
+	text-align: center;
+	padding: 30% 0;
+	span {
+		color: red;
+		text-decoration: underline;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url("https://img.freepik.com/premium-vector/children-s-pattern-with-cute-cars-funny-cars-vector-hand-drawn-illustration_505980-56.jpg");
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+		border-radius: 50px;
+		opacity: 0.1;
+	}
+}

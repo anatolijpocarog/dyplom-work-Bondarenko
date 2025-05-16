@@ -1,0 +1,18 @@
+@import-normalize;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "./variables.scss";
+@import "./reset.scss";
+@import "../components/Section/Section.modal.scss";
+@import "../components/Loader/Loader.module.scss";
+@import "../components/Header/Header.module.scss";
+
+body {
+	margin: 0;
+	font-family: "Manrope", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	color: var(--prim-black-color);
+
+	height: 100vh;
+}

@@ -1,0 +1,88 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 18px;
+	width: 280px;
+	@media (min-width: 820px) {
+		flex-direction: row;
+		align-items: flex-end;
+		flex-wrap: wrap;
+		width: 580px;
+	}
+	@media (min-width: 1500px) {
+		flex-wrap: nowrap;
+		width: 859px;
+	}
+}
+.caption {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.29;
+	margin-bottom: 8px;
+	color: var(--prim-gray-color);
+}
+.mileageWrap {
+	display: flex;
+	flex-direction: column;
+
+	@media (max-width: 1500px) {
+		width: 224px;
+	}
+}
+.mileage {
+	display: flex;
+
+	div {
+		width: 50px;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 1.11;
+		width: 120px;
+		padding: 14px 0 14px 65px;
+		position: relative;
+		background-color: #f7f7fb;
+		border-top-left-radius: 14px;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 14px;
+
+		&:last-child {
+			padding: 14px 0 14px 40px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 14px;
+			border-bottom-right-radius: 14px;
+			border-bottom-left-radius: 0;
+			border-left: 1px solid rgba(138, 138, 137, 0.2);
+		}
+
+		@media (min-width: 1500px) {
+			width: 160px;
+			padding: 14px 0 14px 75px;
+			&:last-child {
+				padding: 14px 0 14px 55px;
+			}
+		}
+	}
+	input {
+		width: 50px;
+	}
+	span {
+		position: absolute;
+		top: 14px;
+		left: 14px;
+		@media (min-width: 1500px) {
+			top: 14px;
+			left: 24px;
+		}
+	}
+}
+.labelWrapper {
+	position: relative;
+}
+.inputAdditionText {
+	position: absolute;
+	bottom: 20px;
+	left: 14px;
+	font-weight: 500;
+}

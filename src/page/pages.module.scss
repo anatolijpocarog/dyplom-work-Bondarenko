@@ -1,0 +1,79 @@
+.listCards {
+	display: flex;
+	flex-direction: column;
+	row-gap: 50px;
+	column-gap: 29px;
+	align-items: center;
+	margin-top: 50px;
+
+	@media (min-width: 780px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 150px;
+}
+
+.btnLoadMore {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.5;
+	width: 79px;
+	text-align: center;
+	color: var(--prim-accent-color);
+	margin-top: 100px;
+	text-decoration: underline;
+	&:is(:hover, :focus) {
+		color: var(--sec-accent-color);
+	}
+}
+
+.homeWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	padding: 32px 0;
+	background-color: rgb(255, 255, 134);
+	border-radius: 16px;
+	padding: 14px;
+	@media (min-width: 850px) {
+		padding: 64px 14px;
+	}
+
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 150px;
+		@media (min-width: 850px) {
+			height: 300px;
+		}
+	}
+}
+.homeImg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.servicesBlock {
+	ol {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+		h3 {
+			font-size: 18px;
+			font-weight: 600;
+			margin-bottom: 8px;
+		}
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			margin-left: 14px;
+		}
+	}
+}
