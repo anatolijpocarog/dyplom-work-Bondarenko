@@ -11,25 +11,17 @@ _A modern platform for finding and renting housing across Ukraine._
 The site includes the following pages:
 
 - **Home Page** — introduction and service overview  
-  ![Home page](./assets/home-page.jpg)
-
-- **All Properties Page** — browse all available homes and apartments  
-  ![All Properties page](./assets/all-properties-page.jpg)
-
-- **Favorites Page** — view and manage your saved listings  
-  ![Favorites page](./assets/favorite-properties.jpg)
+  ![Home page](./assets/img-home-page.jpg)
 
 ---
 
 ## ⚙️ Functionality
 
 - 📄 View detailed information about each property  
-  ![Property details](./assets/detailed-info.jpg)
 
 - ❤️ Add properties to your favorites
 
-- 🧭 Filter listings by type, location, price, and amenities  
-  ![Filters](./assets/filters.jpg)
+- 🧭 Filter listings by type, location, price, and amenities
 
 - 🔄 Load more results to explore additional options
 
