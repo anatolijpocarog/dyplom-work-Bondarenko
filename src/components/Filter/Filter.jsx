@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '../Button/Button';
 
 import makes from './typesHomes.json';
+import city from './city.json';
 import f from './Filter.module.scss';
 
 const muiTheme = createTheme({
@@ -39,11 +40,12 @@ const muiTheme = createTheme({
 
 export const Filter = () => {
   const [typesHomes, setTypesHomes] = useState(null);
+  const [cityHomes, setCityHomes] = useState(null);
   const [Price, setPrice] = useState(null);
   const [minYear, setMinYear] = useState('');
   const [maxYear, setMaxYear] = useState('');
 
-  const filterData = { Price, typesHomes, minYear, maxYear };
+  const filterData = { Price, typesHomes, minYear, maxYear, cityHomes };
 
   const generatePriceArr = () => {
     return Array.from({ length: 100 }, (_, index) => ({
@@ -56,7 +58,7 @@ export const Filter = () => {
   return (
     <div className={f.container}>
       <div>
-        <p className={f.caption}>House type</p>
+        <p className={f.caption}>Тип житла</p>
         <ThemeProvider theme={muiTheme}>
           <Autocomplete
             disablePortal
@@ -78,13 +80,41 @@ export const Filter = () => {
               fieldset: { padding: '0px', border: 'none' },
             }}
             renderInput={params => {
-              return <TextField {...params} label="Types" />;
+              return <TextField {...params} label="Тип" />;
+            }}
+          />
+        </ThemeProvider>
+      </div>
+      <div>
+        <p className={f.caption}>Місто</p>
+        <ThemeProvider theme={muiTheme}>
+          <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            options={city}
+            onChange={(_e, value) => {
+              setCityHomes(value);
+            }}
+            sx={{
+              width: 224,
+              backgroundColor: '#F7F7FB',
+              borderRadius: '14px',
+              border: 'none',
+              button: {
+                width: '24px',
+                justifyContent: 'flex-end',
+              },
+              label: { color: 'var(--prim-black-color)' },
+              fieldset: { padding: '0px', border: 'none' },
+            }}
+            renderInput={params => {
+              return <TextField {...params} label="Місто" />;
             }}
           />
         </ThemeProvider>
       </div>
       <div className={f.labelWrapper}>
-        <p className={f.caption}>Price/ 1 month</p>
+        <p className={f.caption}>Вартість/ 1 місяць</p>
         <ThemeProvider theme={muiTheme}>
           <Autocomplete
             disablePortal
@@ -114,13 +144,13 @@ export const Filter = () => {
             renderInput={params => <TextField {...params} label="₴" />}
           />
         </ThemeProvider>
-        <span className={f.inputAdditionText}>To</span>
+        <span className={f.inputAdditionText}>До</span>
       </div>
       <div className={f.mileageWrap}>
-        <p className={f.caption}>House years</p>
+        <p className={f.caption}>Рік будинку</p>
         <div className={f.mileage}>
           <div>
-            <span>From</span>
+            <span>Від</span>
             <input
               type="text"
               pattern="[0-9]*"
@@ -132,7 +162,7 @@ export const Filter = () => {
             />
           </div>
           <div>
-            <span>To</span>
+            <span>До</span>
             <input
               type="text"
               pattern="[0-9]*"
@@ -145,7 +175,7 @@ export const Filter = () => {
           </div>
         </div>
       </div>
-      <Button text="Search" filterData={filterData} />
+      <Button text="Пошук" filterData={filterData} />
     </div>
   );
 };

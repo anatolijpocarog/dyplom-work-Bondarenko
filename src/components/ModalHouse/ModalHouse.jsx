@@ -85,21 +85,21 @@ export const ModalHouse = () => {
                                         <p>{addressParts[2]}</p>
                                     </li>
                                     <li>
-                                        <p>Id: {id}</p>
+                                        <p>ІД: {id}</p>
                                     </li>
                                     <li>
-                                        <p>Year: {year}</p>
+                                        <p>Рік: {year}</p>
                                     </li>
                                     <li>
-                                        <p className={item.carType}>Type: {typeCar}</p>
+                                        <p className={item.carType}>Тип: {typeCar}</p>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li>
-                                        <p>Rental Company: {rentalCompany}</p>
+                                        <p>Орендна компанія: {rentalCompany}</p>
                                     </li>
                                     <li>
-                                        <p>Size: {size}</p>
+                                        <p>Розмір: {size}</p>
                                     </li>
                                 </ul>
                             </div>
@@ -108,7 +108,7 @@ export const ModalHouse = () => {
                     </div>
 
                     <div className="additional-car-info">
-                        <h3>Features and functionalities:</h3>
+                        <h3>Функції та можливості:</h3>
                         <div className={item.carAdditionalInfo}>
                             <ul>
                                 {features.map((item, index) => (
@@ -128,7 +128,7 @@ export const ModalHouse = () => {
                     </div>
 
                     <div className="additional-car-info">
-                        <h3>Rental Conditions:</h3>
+                        <h3>Умови оренди:</h3>
                         <ul className={m.conditionsList}>
                             {conditionsArray.map((condition, index) => (
                                 <li key={index}>
@@ -145,18 +145,18 @@ export const ModalHouse = () => {
                             ))}
                             <li>
                                 <p>
-                                    Square: <span>{square}</span>
+                                    Площа <span>{square}</span>
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    Price: <span>{Price.slice(1)}$</span>
+                                    Вартість: <span>{Price.slice(1)}₴</span>
                                 </p>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <Button text="Rental house" onClick={closeModal} />
+                        <Button text="Оренда будинку" onClick={closeModal} />
 
                         <button type="button" onClick={closeModal}>
                             <svg width="24" height="24">

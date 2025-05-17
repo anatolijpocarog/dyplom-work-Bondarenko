@@ -9,9 +9,9 @@ const nameReg = /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-
 const emailReg = /^\w+@\w+\.\w+$/;
 
 const schema = yup.object().shape({
-  name: yup.string().matches(nameReg, 'Not valid').required('Required'),
-  email: yup.string().matches(emailReg, 'Not valid').required('Required'),
-  password: yup.string().min(8, 'Not valid').required('Required'),
+  name: yup.string().matches(nameReg, 'Не валідно').required('Обовʼязкове поле'),
+  email: yup.string().matches(emailReg, 'Не валідно').required('Обовʼязкове поле'),
+  password: yup.string().min(8, 'Не валідно').required('Обовʼязкове поле'),
 });
 
 const SignUpForm = () => {
@@ -31,7 +31,7 @@ const SignUpForm = () => {
     >
       <Form className={styles.formContainer}>
         <label className={styles.label}>
-          Name
+          Імʼя
           <Field
             className={styles.input}
             type="text"
@@ -42,7 +42,7 @@ const SignUpForm = () => {
         </label>
 
         <label className={styles.label}>
-          Email
+          Емейл
           <Field
             className={styles.input}
             type="email"
@@ -53,7 +53,7 @@ const SignUpForm = () => {
         </label>
 
         <label className={styles.label}>
-          Password
+          Пароль
           <Field
             className={styles.input}
             type="password"
@@ -64,7 +64,7 @@ const SignUpForm = () => {
         </label>
 
         <button type="submit" className={styles.formButton}>
-          Create User
+            Створити користувача
         </button>
       </Form>
     </Formik>

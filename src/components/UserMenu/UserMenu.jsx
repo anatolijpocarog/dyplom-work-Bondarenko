@@ -15,7 +15,7 @@ const UserMenu = () => {
     <div className={styles.logoutBox}>
       <p>{userData.name}</p>
       <button type="button" onClick={onLogout} className={styles.logoutBoxButton}>
-        Log Out
+        Вихід
       </button>
     </div>
   );

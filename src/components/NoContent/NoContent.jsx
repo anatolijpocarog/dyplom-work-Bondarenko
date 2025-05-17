@@ -4,7 +4,7 @@ export const NoContent = () => {
   return (
     <div className={empty.noContent}>
       <p>
-        <span>It's still empty here </span>🙂
+        <span>Тут ще пусто</span>🙂
       </p>
     </div>
   );

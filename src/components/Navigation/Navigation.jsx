@@ -31,7 +31,7 @@ export const Navigation = () => {
                     isActive ? `${styles.navLink} active` : styles.navLink
                   }
                 >
-                  Log in
+                  Увійти
                 </NavLink>
               </li>
               <li>
@@ -41,7 +41,7 @@ export const Navigation = () => {
                     isActive ? `${styles.navLink} active` : styles.navLink
                   }
                 >
-                  Register
+                  Реєстрація
                 </NavLink>
               </li>
             </ul>

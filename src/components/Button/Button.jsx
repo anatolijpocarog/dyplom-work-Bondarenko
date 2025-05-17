@@ -26,17 +26,17 @@ function Button({ text, car, filterData }) {
   };
 
   return (
-    (text === 'Learn more' && (
+    (text === 'Більше' && (
       <button className={b.btnLearnMore} onClick={() => learnMore(car)}>
         {text}
       </button>
     )) ||
-    (text === 'Rental house' && (
+    (text === 'Оренда будинку' && (
       <button className={b.rentalCar} onClick={closeModal}>
         <a href="tel:+380730000000">{text}</a>
       </button>
     )) ||
-    (text === 'Search' && (
+    (text === 'Пошук' && (
       <button className={b.search} onClick={filterSearch}>
         {text}
       </button>

@@ -34,7 +34,7 @@ const HouseRentalPage = () => {
         const total = await totalCars();
         setTotalElements(total);
       } catch (error) {
-        toast.error('Error fetching total elements:', error);
+        toast.error('Помилка отримання загальної кількості елементів:', error);
       }
     };
     fetchTotalElements();
@@ -52,13 +52,16 @@ const HouseRentalPage = () => {
   useEffect(() => {
 
     if (filter.length !== 0) {
-      const { typesHomes, Price, minYear, maxYear } = filter;
+      const { typesHomes, Price, minYear, maxYear, cityHomes } = filter;
 
       const filterList = responseCarData.filter(car => {
-
         const numPrice = parseInt(car.Price.replace(/\D/g, ''), 10);
+        const addressParts = car.address.split(', ');
+        const cityFromAddress = addressParts[addressParts.length - 2];
 
         const typeCondition = typesHomes !== null ? car.type === typesHomes : true;
+        const cityCondition = cityHomes !== null ? cityFromAddress === cityHomes : true;
+
         const priceCondition = Price !== null ? numPrice <= Price.value : true;
         const minYearCondition =
           minYear !== '' ? Number(car.year) >= Number(minYear) : true;
@@ -67,6 +70,7 @@ const HouseRentalPage = () => {
 
         return (
           typeCondition &&
+          cityCondition &&
           priceCondition &&
           minYearCondition &&
           maxYearCondition
@@ -86,7 +90,7 @@ const HouseRentalPage = () => {
 
   return (
     <>
-      <Section title="All adverts">
+      <Section title="Усі оголошення">
         <Container>
           <div className={rentalCars.wrapper}>
             <Filter />
@@ -108,7 +112,7 @@ const HouseRentalPage = () => {
               filter.minYear === '' &&
               filter.maxYear === '') ? (
               <button className={rentalCars.btnLoadMore} onClick={loadMore}>
-                Load more
+                ↓ Більше ↓
               </button>
             ) : null}
           </div>

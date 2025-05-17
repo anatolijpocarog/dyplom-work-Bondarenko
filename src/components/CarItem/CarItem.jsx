@@ -120,7 +120,7 @@ export const CarItem = ({ car }) => {
           </div>
         </div>
       </div>
-      <Button text="Learn more" car={car} />
+      <Button text="Більше" car={car} />
     </li>
   );
 };

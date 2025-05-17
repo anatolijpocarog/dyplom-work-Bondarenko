@@ -3,7 +3,7 @@ import SignUpForm from '../components/SignUpForm/SignUp';
 
 const RegistrationPage = () => {
   return (
-    <Section title="Time to feel like home">
+    <Section title="Відчувай себе як вдома">
       <SignUpForm />
     </Section>
   );

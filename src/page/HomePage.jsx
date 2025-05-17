@@ -7,7 +7,7 @@ import rentalHomes from './pages.module.scss';
 
 const HomePage = () => {
   return (
-    <Section title="Ukrainian Home Rental">
+    <Section title="Оренда житла в Україні">
       <Container>
         <div className={rentalHomes.homeWrapper}>
           <section>

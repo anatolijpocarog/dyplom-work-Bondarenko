@@ -12,7 +12,7 @@ import rentalCars from './pages.module.scss';
 const FavoriteHousePage = () => {
   const favoriteCars = useSelector(selectFavorites);
   return (
-    <Section title="Your favorite rental house!">
+    <Section title="Ваш улюблений будинок для оренди!">
       <Container>
         <div className={rentalCars.favoriteWrapper}>
           {favoriteCars.length === 0 ? (

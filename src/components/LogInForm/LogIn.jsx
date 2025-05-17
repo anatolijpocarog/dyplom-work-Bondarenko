@@ -29,7 +29,7 @@ const LogInForm = () => {
     >
       <Form className={styles.formContainer}>
         <label className={styles.label}>
-          Email
+          Емейл
           <Field
             className={styles.input}
             type="email"
@@ -40,7 +40,7 @@ const LogInForm = () => {
         </label>
 
         <label className={styles.label}>
-          Password
+          Пароль
           <Field
             className={styles.input}
             type="password"
@@ -51,7 +51,7 @@ const LogInForm = () => {
         </label>
 
         <button type="submit" className={styles.formButton}>
-          Create User
+          Увійти
         </button>
       </Form>
     </Formik>

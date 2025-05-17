@@ -4,7 +4,7 @@ import LogInForm from '../components/LogInForm/LogIn';
 const LogInPage = () => {
   return (
     <>
-      <Section title="Welcome back">
+      <Section title="Ласкаво просимо">
         <LogInForm />
       </Section>
     </>
