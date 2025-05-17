@@ -11,7 +11,7 @@ _A modern platform for finding and renting housing across Ukraine._
 The site includes the following pages:
 
 - **Home Page** — introduction and service overview  
-  ![Home page](./assets/img-home-page.jpg)
+  ![Home page](./assets/home-page.jpg)
 
 ---
 
@@ -45,7 +45,7 @@ The site includes the following pages:
 
 ## 🔗 Useful Links
 
-- 🌐 **Live Demo:** [Ukrainian Home Rental](https://your-home-rental.netlify.app/)  
+- 🌐 **Live Demo:** [Ukrainian Home Rental](https://dyplom-work-bondarenko.netlify.app/)  
 
 ---
 
