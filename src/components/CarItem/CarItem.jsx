@@ -29,16 +29,16 @@ export const CarItem = ({ car }) => {
   };
 
   const {
-    make,
+    id,
     year,
-    model,
+    make,
     type,
     img,
-    functionalities,
+    square,
+    size,
+    Price,
     rentalCompany,
     address,
-    rentalPrice,
-    id,
   } = car;
 
   useEffect(() => {
@@ -51,7 +51,6 @@ export const CarItem = ({ car }) => {
 
   const addressParts = address.split(', ');
   const classCar = rentalCompany.split(' ');
-  const features = functionalities[0].split(' ').slice(0, 2);
   const typeCar = type.toLowerCase();
 
   return (
@@ -83,14 +82,13 @@ export const CarItem = ({ car }) => {
         <div>
           <div className={item.carMainInfo}>
             <h3>
-              {make} {model && <span>{model}</span>}, {year}
+              {make} {type && <span>{type}</span>}, {year}
             </h3>
-            <p>{rentalPrice}</p>
           </div>
           <div className={item.carAdditionalInfo}>
             <ul>
               <li>
-                <p>{addressParts[1]}</p>
+                <p>{classCar[0]}</p>
               </li>
               <li>
                 <p>{addressParts[2]}</p>
@@ -99,7 +97,7 @@ export const CarItem = ({ car }) => {
                 <p>{rentalCompany}</p>
               </li>
               <li>
-                <p>{classCar[0]}</p>
+                <p>{square}</p>
               </li>
             </ul>
             <ul>
@@ -107,13 +105,16 @@ export const CarItem = ({ car }) => {
                 <p className={item.carType}>{typeCar}</p>
               </li>
               <li>
-                <p>{model}</p>
+                <p>{size}</p>
               </li>
               <li>
-                <p>{id}</p>
+                <p>{Price}</p>
               </li>
+            </ul>
+
+            <ul>
               <li>
-                <p>{features.join(' ')}</p>
+                <p>{addressParts}</p>
               </li>
             </ul>
           </div>

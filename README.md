@@ -1,43 +1,68 @@
 <a name="start"></a>
 
-# **_Drive Dazzle_**
+# 🏠 **Ukrainian Home Rental**
 
-This site is intended for car rental in Ukraine
+_A modern platform for finding and renting housing across Ukraine._
 
-## Site structure
+---
 
-The site has a `Home page`
+## 🧭 Site Structure
 
-![Home page](./assets/home-page.jpg)
+The site includes the following pages:
 
-An `All Cars` page with all available rental cars
+- **Home Page** — introduction and service overview  
+  ![Home page](./assets/home-page.jpg)
 
-![All Cars page](./assets/all-cars-page.jpg)
+- **All Properties Page** — browse all available homes and apartments  
+  ![All Properties page](./assets/all-properties-page.jpg)
 
-And a `Favorite Rental Cars` page.
+- **Favorites Page** — view and manage your saved listings  
+  ![Favorites page](./assets/favorite-properties.jpg)
 
-![All Cars page](./assets/favorite-page.jpg)
+---
 
-## Functional
+## ⚙️ Functionality
 
-- You can view information about each interested car.
-  ![Modal information car](./assets/detailed%20information.jpg)
-- Add car to favorites.
-- Filter the list of cars. ![Filter list](./assets/filter.jpg)
-- Load more cars for a wide selection.
+- 📄 View detailed information about each property  
+  ![Property details](./assets/detailed-info.jpg)
 
-## Additional Information
+- ❤️ Add properties to your favorites
 
-> This site is also designed with a layout and additionally adapted for all
-> devices.
+- 🧭 Filter listings by type, location, price, and amenities  
+  ![Filters](./assets/filters.jpg)
 
-> React and Redux were used for work. The Axios library is used for queries
+- 🔄 Load more results to explore additional options
 
-> The project is deployed on netlify.com:
-> [Drive Dazzle](https://drive-dazzle.netlify.app/)
+---
 
-[Figma](https://www.figma.com/file/XhC8FSCfAkraEF5l7Hx4fL/Test?type=design&node-id=0%3A1&mode=design&t=i35KsHCSIyGSn1ML-1)
+## 📱 Responsive Design
 
-**_Nice wheels of choice!😉_**
+> The website is fully responsive and optimized for all devices, including mobile phones and tablets.
 
-[^ Up to start ^](#start)
+---
+
+## 🛠️ Technologies Used
+
+- **React**
+- **Redux**
+- **Axios** for API requests
+- **CSS Modules / TailwindCSS**
+- Deployed on **Netlify**
+
+---
+
+## 🔗 Useful Links
+
+- 🌐 **Live Demo:** [Ukrainian Home Rental](https://your-home-rental.netlify.app/)  
+
+---
+
+## 🏡 Find your home away from home
+
+> **_Comfort. Flexibility. Simplicity._**
+
+---
+
+[↑ Back to top](#start)
+
+

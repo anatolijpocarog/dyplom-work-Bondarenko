@@ -50,24 +50,26 @@ const HouseRentalPage = () => {
   }, [dispatch, responseCarData]);
 
   useEffect(() => {
+
     if (filter.length !== 0) {
-      const { make, price, minMileage, maxMileage } = filter;
+      const { typesHomes, Price, minYear, maxYear } = filter;
 
       const filterList = responseCarData.filter(car => {
-        const numPrice = parseInt(car.rentalPrice.replace(/\D/g, ''), 10);
 
-        const makeCondition = make !== null ? car.make === make : true;
-        const priceCondition = price !== null ? numPrice <= price.value : true;
-        const minMileageCondition =
-          minMileage !== '' ? Number(car.mileage) >= Number(minMileage) : true;
-        const maxMileageCondition =
-          maxMileage !== '' ? Number(car.mileage) <= Number(maxMileage) : true;
+        const numPrice = parseInt(car.Price.replace(/\D/g, ''), 10);
+
+        const typeCondition = typesHomes !== null ? car.type === typesHomes : true;
+        const priceCondition = Price !== null ? numPrice <= Price.value : true;
+        const minYearCondition =
+          minYear !== '' ? Number(car.year) >= Number(minYear) : true;
+        const maxYearCondition =
+          maxYear !== '' ? Number(car.year) <= Number(maxYear) : true;
 
         return (
-          makeCondition &&
+          typeCondition &&
           priceCondition &&
-          minMileageCondition &&
-          maxMileageCondition
+          minYearCondition &&
+          maxYearCondition
         );
       });
 
@@ -101,10 +103,10 @@ const HouseRentalPage = () => {
               nextPage <= lastPage &&
               filter.length === 0) ||
             (nextPage <= lastPage &&
-              filter.make === null &&
-              filter.price === null &&
-              filter.minMileage === '' &&
-              filter.maxMileage === '') ? (
+              filter.type === null &&
+              filter.Price === null &&
+              filter.minYear === '' &&
+              filter.maxYear === '') ? (
               <button className={rentalCars.btnLoadMore} onClick={loadMore}>
                 Load more
               </button>

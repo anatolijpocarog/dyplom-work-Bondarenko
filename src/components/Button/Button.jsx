@@ -18,7 +18,7 @@ function Button({ text, car, filterData }) {
 
   const closeModal = useCallback(() => {
     dispatch(setIsOpenModal(false));
-    toast.success('You can contact the company by tel: +380730000000');
+    toast.success('You can contact the company by tel: +380680000000');
   }, [dispatch]);
 
   const filterSearch = () => {
@@ -31,7 +31,7 @@ function Button({ text, car, filterData }) {
         {text}
       </button>
     )) ||
-    (text === 'Rental car' && (
+    (text === 'Rental house' && (
       <button className={b.rentalCar} onClick={closeModal}>
         <a href="tel:+380730000000">{text}</a>
       </button>

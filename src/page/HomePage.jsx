@@ -1,117 +1,98 @@
 import { Container } from '../components/Container/Container';
 import { Section } from '../components/Section/Section';
 
-import car from '../images/home-foto.avif';
+import homeImage from '../images/home-foto.avif';
 
-import rentalCars from './pages.module.scss';
+import rentalHomes from './pages.module.scss';
+
 const HomePage = () => {
   return (
-    <Section title="Ukrainian house rental">
+    <Section title="Ukrainian Home Rental">
       <Container>
-        <div className={rentalCars.homeWrapper}>
+        <div className={rentalHomes.homeWrapper}>
           <section>
-            <h2>Welcome to "Ukrainian house rental"!</h2>
-            <div className={rentalCars.homeImg}>
-              <img src={car} alt="car" />
+            <h2>Ласкаво просимо до "Ukrainian Home Rental"!</h2>
+            <div className={rentalHomes.homeImg}>
+              <img src={homeImage} alt="🏠 Оренда житла по всій Україні" />
             </div>
           </section>
+
           <section>
-            <h2>About us</h2>
+            <h2>Про нас</h2>
             <p>
-              text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-                          </p>
+              Ми — професійна компанія з оренди житла, що вже кілька років надає зручні, надійні та доступні рішення для тимчасового проживання. Наша мета — зробити ваше перебування комфортним, незалежно від мети подорожі.
+            </p>
           </section>
-          <section className={rentalCars.servicesBlock}>
-            <h2>Our Services</h2>
+
+          <section className={rentalHomes.servicesBlock}>
+            <h2>Наші послуги</h2>
             <ol>
               <li>
-                <h3>title title title</h3>
+                <h3>🛏 Оренда житла на будь-який смак і бюджет</h3>
                 <ul>
                   <li>
-                    <p>
-                      text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-                    </p>
+                    <p>Апартаменти, будинки, котеджі — від економ до преміум класу.</p>
                   </li>
                   <li>
-                    <p>
-                      text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-                    </p>
+                    <p>Гнучкі ціни та індивідуальний підхід до кожного клієнта.</p>
                   </li>
                 </ul>
               </li>
               <li>
-                <h3>title title title</h3>
+                <h3>🏢 Корпоративна оренда</h3>
                 <ul>
                   <li>
-                    <p>
-                      text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-                    </p>
+                    <p>Спеціальні умови для компаній та бізнес-клієнтів.</p>
                   </li>
                   <li>
-                    <p>
-                        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-                    </p>
+                    <p>Помешкання, обладнані для довгострокового проживання та роботи.</p>
                   </li>
                 </ul>
               </li>
               <li>
-                <h3>title title title</h3>
+                <h3>🧳 Оренда для туристів і мандрівників</h3>
                 <ul>
                   <li>
-                    <p>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-                      </p>
+                    <p>Житло поруч із туристичними об'єктами, зручна локація.</p>
                   </li>
                   <li>
-                    <p>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-                    </p>
+                    <p>Повністю мебльовані об'єкти з усім необхідним для комфортного відпочинку.</p>
                   </li>
                 </ul>
               </li>
               <li>
-                <h3>title title title</h3>
+                <h3>🛎 Додаткові сервіси</h3>
                 <ul>
                   <li>
-                    <p>
-                      text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-
-                    </p>
+                    <p>Wi-Fi, трансфер, прибирання, послуги консьєржа, побутова техніка.</p>
                   </li>
                   <li>
-                    <p>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-                    </p>
+                    <p>Підтримка 24/7 для вашої зручності та спокою.</p>
                   </li>
                 </ul>
               </li>
             </ol>
           </section>
+
           <section>
-            <h2>Why Choose Us?</h2>
+            <h2>Чому обирають нас?</h2>
             <ul>
               <li>
-                <p>
-                  text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-
-                </p>
+                <p><strong>Надійність:</strong> Усі об’єкти проходять регулярні перевірки якості та безпеки.</p>
               </li>
               <li>
-                <p>
-                  text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-
-                </p>
+                <p><strong>Прозорість:</strong> Жодних прихованих комісій чи додаткових платежів.</p>
               </li>
               <li>
-                <p>
-                  text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-
-                </p>
+                <p><strong>Клієнтоорієнтованість:</strong> Ми завжди прислухаємося до побажань клієнтів і підбираємо найкращі варіанти.</p>
               </li>
             </ul>
           </section>
-          <section>
-            <h2>Contact Us</h2>
-            <p>
-              text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
 
+          <section>
+            <h2>Зв’яжіться з нами</h2>
+            <p>
+              Якщо у вас є запитання або ви хочете забронювати житло — зв’яжіться з нами будь-яким зручним способом. Ми радо допоможемо зробити ваше перебування комфортним та безтурботним!
             </p>
           </section>
         </div>

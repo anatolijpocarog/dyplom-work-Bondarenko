@@ -17,11 +17,18 @@ import { isOpenModalReducer } from './slice/isOpenModalSlice';
 import { carInfoReducer } from './slice/carInfoSlice';
 import { nextPageReducer } from './slice/nextApiPageSlice';
 import { filterReducer } from './slice/filterSlice';
+import { authReducer } from './auth/authSlice';
 
 const carsConfig = {
   key: 'cars',
   storage,
   whitelist: ['favorites'],
+};
+
+const authConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
 };
 
 const rootReducer = combineReducers({
@@ -30,6 +37,7 @@ const rootReducer = combineReducers({
   carInfo: carInfoReducer,
   nextPage: nextPageReducer,
   filter: filterReducer,
+  auth: persistReducer(authConfig, authReducer),
 });
 
 export const store = configureStore({

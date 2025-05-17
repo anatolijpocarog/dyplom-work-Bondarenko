@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Button from '../Button/Button';
 
-import makes from './makes.json';
+import makes from './typesHomes.json';
 import f from './Filter.module.scss';
 
 const muiTheme = createTheme({
@@ -38,17 +38,17 @@ const muiTheme = createTheme({
 });
 
 export const Filter = () => {
-  const [make, setMake] = useState(null);
-  const [price, setPrice] = useState(null);
-  const [minMileage, setMinMileage] = useState('');
-  const [maxMileage, setMaxMileage] = useState('');
+  const [typesHomes, setTypesHomes] = useState(null);
+  const [Price, setPrice] = useState(null);
+  const [minYear, setMinYear] = useState('');
+  const [maxYear, setMaxYear] = useState('');
 
-  const filterData = { price, make, minMileage, maxMileage };
+  const filterData = { Price, typesHomes, minYear, maxYear };
 
   const generatePriceArr = () => {
     return Array.from({ length: 100 }, (_, index) => ({
-      value: (index + 1) * 10,
-      label: `${(index + 1) * 10}$`,
+      value: (index + 10) * 1000,
+      label: `${(index + 10) * 1000}₴`,
     }));
   };
   const priceOptions = generatePriceArr();
@@ -56,14 +56,14 @@ export const Filter = () => {
   return (
     <div className={f.container}>
       <div>
-        <p className={f.caption}>Car brand</p>
+        <p className={f.caption}>House type</p>
         <ThemeProvider theme={muiTheme}>
           <Autocomplete
             disablePortal
             id="combo-box-demo"
             options={makes}
             onChange={(_e, value) => {
-              setMake(value);
+              setTypesHomes(value);
             }}
             sx={{
               width: 224,
@@ -78,13 +78,13 @@ export const Filter = () => {
               fieldset: { padding: '0px', border: 'none' },
             }}
             renderInput={params => {
-              return <TextField {...params} label="Makes" />;
+              return <TextField {...params} label="Types" />;
             }}
           />
         </ThemeProvider>
       </div>
       <div className={f.labelWrapper}>
-        <p className={f.caption}>Price/ 1 hour</p>
+        <p className={f.caption}>Price/ 1 month</p>
         <ThemeProvider theme={muiTheme}>
           <Autocomplete
             disablePortal
@@ -111,13 +111,13 @@ export const Filter = () => {
                 padding: '7.5px 4px 7.5px 25px',
               },
             }}
-            renderInput={params => <TextField {...params} label="$" />}
+            renderInput={params => <TextField {...params} label="₴" />}
           />
         </ThemeProvider>
         <span className={f.inputAdditionText}>To</span>
       </div>
       <div className={f.mileageWrap}>
-        <p className={f.caption}>Сar mileage / km 10</p>
+        <p className={f.caption}>House years</p>
         <div className={f.mileage}>
           <div>
             <span>From</span>
@@ -125,9 +125,9 @@ export const Filter = () => {
               type="text"
               pattern="[0-9]*"
               maxLength="4"
-              value={minMileage}
+              value={minYear}
               onChange={e => {
-                setMinMileage(e.target.value);
+                setMinYear(e.target.value);
               }}
             />
           </div>
@@ -137,9 +137,9 @@ export const Filter = () => {
               type="text"
               pattern="[0-9]*"
               maxLength="4"
-              value={maxMileage}
+              value={maxYear}
               onChange={e => {
-                setMaxMileage(e.target.value);
+                setMaxYear(e.target.value);
               }}
             />
           </div>

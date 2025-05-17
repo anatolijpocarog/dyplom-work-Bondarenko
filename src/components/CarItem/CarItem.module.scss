@@ -4,7 +4,8 @@
 	flex-direction: column;
 	gap: 28px;
 	width: 274px;
-	height: 426px;
+	max-height: 426px;
+	height: 100%;
 
 	@media (min-width: 768) {
 		flex-basis: calc((100% - 58px) / 2);
