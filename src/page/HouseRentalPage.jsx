@@ -52,7 +52,19 @@ const HouseRentalPage = () => {
   useEffect(() => {
 
     if (filter.length !== 0) {
-      const { typesHomes, Price, minYear, maxYear, cityHomes } = filter;
+      const {
+        typesHomes,
+        Price,
+        minYear,
+        maxYear,
+        cityHomes,
+        minSquare,
+        maxSquare,
+        minSize,
+        maxSize,
+        minPrice,
+        maxPrice,
+      } = filter;
 
       const filterList = responseCarData.filter(car => {
         const numPrice = parseInt(car.Price.replace(/\D/g, ''), 10);
@@ -61,19 +73,35 @@ const HouseRentalPage = () => {
 
         const typeCondition = typesHomes !== null ? car.type === typesHomes : true;
         const cityCondition = cityHomes !== null ? cityFromAddress === cityHomes : true;
+        const priceCondition =
+          Price !== null ? numPrice <= Price.value :
+            minPrice !== '' && maxPrice !== '' ? numPrice >= Number(minPrice) && numPrice <= Number(maxPrice) :
+              minPrice !== '' ? numPrice >= Number(minPrice) :
+                maxPrice !== '' ? numPrice <= Number(maxPrice) :
+                  true;
 
-        const priceCondition = Price !== null ? numPrice <= Price.value : true;
-        const minYearCondition =
-          minYear !== '' ? Number(car.year) >= Number(minYear) : true;
-        const maxYearCondition =
-          maxYear !== '' ? Number(car.year) <= Number(maxYear) : true;
+        const YearCondition =
+          (minYear !== '' ? Number(car.year) >= Number(minYear) : true) &&
+          (maxYear !== '' ? Number(car.year) <= Number(maxYear) : true);
+
+        const squareCondition =
+          (minSquare !== '' ? Number(car.square) >= Number(minSquare) : true) &&
+          (maxSquare !== '' ? Number(car.square) <= Number(maxSquare) : true);
+
+        const floorMatch = car.size && car.size.match(/^(\d+)/); // "12 поверх із 20" -> 12
+        const currentFloor = floorMatch ? parseInt(floorMatch[1], 10) : null;
+
+        const floorCondition =
+          (minSize !== '' ? currentFloor >= Number(minSize) : true) &&
+          (maxSize !== '' ? currentFloor <= Number(maxSize) : true);
 
         return (
           typeCondition &&
           cityCondition &&
           priceCondition &&
-          minYearCondition &&
-          maxYearCondition
+          YearCondition &&
+          squareCondition &&
+          floorCondition
         );
       });
 
@@ -107,10 +135,17 @@ const HouseRentalPage = () => {
               nextPage <= lastPage &&
               filter.length === 0) ||
             (nextPage <= lastPage &&
-              filter.type === null &&
+              filter.typesHomes === null &&
               filter.Price === null &&
               filter.minYear === '' &&
-              filter.maxYear === '') ? (
+              filter.maxYear === '' &&
+              filter.minPrice === '' &&
+              filter.maxPrice === '' &&
+              filter.minSquare === '' &&
+              filter.maxSquare === '' &&
+              filter.minSize === '' &&
+              filter.maxSize === '' &&
+              filter.cityHomes === null) ? (
               <button className={rentalCars.btnLoadMore} onClick={loadMore}>
                 ↓ Більше ↓
               </button>

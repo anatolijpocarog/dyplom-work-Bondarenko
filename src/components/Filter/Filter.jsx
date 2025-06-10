@@ -42,10 +42,20 @@ export const Filter = () => {
   const [typesHomes, setTypesHomes] = useState(null);
   const [cityHomes, setCityHomes] = useState(null);
   const [Price, setPrice] = useState(null);
+
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
+
+  const [minSquare, setMinSquare] = useState('');
+  const [maxSquare, setMaxSquare] = useState('');
+
+  const [minSize, setMinSize] = useState('');
+  const [maxSize, setMaxSize] = useState('');
+
   const [minYear, setMinYear] = useState('');
   const [maxYear, setMaxYear] = useState('');
 
-  const filterData = { Price, typesHomes, minYear, maxYear, cityHomes };
+  const filterData = { minSquare, maxSquare, minSize, maxSize, minPrice, maxPrice, Price, typesHomes, minYear, maxYear, cityHomes, };
 
   const generatePriceArr = () => {
     return Array.from({ length: 100 }, (_, index) => ({
@@ -170,6 +180,96 @@ export const Filter = () => {
               value={maxYear}
               onChange={e => {
                 setMaxYear(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className={f.mileageWrap}>
+        <p className={f.caption}>Ціна будинку</p>
+        <div className={f.mileage}>
+          <div>
+            <span>Від</span>
+            <input
+              type="text"
+              pattern="[0-9]*"
+              maxLength="7"
+              value={minPrice}
+              onChange={e => {
+                setMinPrice(e.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <span>До</span>
+            <input
+              type="text"
+              pattern="[0-9]*"
+              maxLength="7"
+              value={maxPrice}
+              onChange={e => {
+                setMaxPrice(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className={f.mileageWrap}>
+        <p className={f.caption}>Загальна площа будинку</p>
+        <div className={f.mileage}>
+          <div>
+            <span>Від</span>
+            <input
+              type="text"
+              pattern="[0-9]*"
+              maxLength="4"
+              value={minSquare}
+              onChange={e => {
+                setMinSquare(e.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <span>До</span>
+            <input
+              type="text"
+              pattern="[0-9]*"
+              maxLength="4"
+              value={maxSquare}
+              onChange={e => {
+                setMaxSquare(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className={f.mileageWrap}>
+        <p className={f.caption}>Поверховість будинку</p>
+        <div className={f.mileage}>
+          <div>
+            <span>Від</span>
+            <input
+              type="text"
+              pattern="[0-9]*"
+              maxLength="4"
+              value={minSize}
+              onChange={e => {
+                setMinSize(e.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <span>До</span>
+            <input
+              type="text"
+              pattern="[0-9]*"
+              maxLength="4"
+              value={maxSize}
+              onChange={e => {
+                setMaxSize(e.target.value);
               }}
             />
           </div>
