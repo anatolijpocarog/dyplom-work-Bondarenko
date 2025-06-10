@@ -17,6 +17,7 @@ const Layout = lazy(() => import('./components/Layout/Layout'));
 const HomePage = lazy(() => import('./page/HomePage'));
 const HouseRentalPage = lazy(() => import('./page/HouseRentalPage'));
 const FavoriteCarsPage = lazy(() => import('./page/FavoriteHousePage'));
+const OrendaDashPage = lazy(() => import('./page/OrendaDashPage'));
 
 function App() {
   const isOpenModal = useSelector(selectIsOpenModal);
@@ -34,20 +35,6 @@ function App() {
 
   return (
     <>
-      {/* <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/catalog" element={<HouseRentalPage />} />
-            <Route path="/favorites" element={<FavoriteCarsPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Route>
-        </Routes>
-      </Suspense>
-      {isOpenModal && <ModalHouse />}
-      {isLoading && <Loader />}
-      <ToastContainer /> */}
-      {/** ============ */}
 
       <Suspense fallback={<Loader />}>
         <Routes>
@@ -66,6 +53,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <FavoriteCarsPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/orenda-dash"
+              element={
+                <PrivateRoute>
+                  <OrendaDashPage />
                 </PrivateRoute>
               }
             />

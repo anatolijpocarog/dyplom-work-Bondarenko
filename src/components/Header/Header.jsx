@@ -34,6 +34,11 @@ function Header() {
                   Улюблене
                 </NavLink>
               </li>
+              <li>
+                <NavLink className="header-nav-link" to="/orenda-dash">
+                  Для Орендодавця
+                </NavLink>
+              </li>
             </ul>
           </div>
           <UserMenu />
