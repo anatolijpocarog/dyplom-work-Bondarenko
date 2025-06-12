@@ -61,7 +61,9 @@ const OrendaDashPage = () => {
       setSubmitSuccess(true);
       setFormData(initialFormState); // Очищення форми
     } catch (error) {
-      console.error('Помилка:', error);
+      toast.error('Помилка:', error);
+
+      // console.error('Помилка:', error);
     } finally {
       setIsSubmitting(false);
     }
